@@ -1,0 +1,125 @@
+openapi: 3.0.2
+info:
+  title: Sample API
+  contact:
+    name: Gabriel Couto
+    email: gmcouto@gmail.com
+  version: 1.0.0
+
+paths:
+  /hello:
+    post:
+      summary: Post Hello message to someone
+      operationId: postHello
+      requestBody:
+        description: "A 'Hello' action to perform"
+        required: true
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: '#/components/schemas/ActionRequest'
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+              example:
+                message: "Hello John, I'm World"
+        '400':
+          description: "Bad request. 'to' is required, between 1 and 60 characters."
+  /bye:
+    post:
+      summary: Post Bye message to someone
+      operationId: postBye
+      requestBody:
+        description: "A 'Bye' action to perform"
+        required: true
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: '#/components/schemas/ActionRequest'
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+              example:
+                message: "Bye John, I'm World"
+        '400':
+          description: "Bad request. 'to' is required, between 1 and 60 characters."
+  /uppercase:
+    post:
+      summary: Make any string uppercase
+      operationId: postToUppercase
+      requestBody:
+        description: "A message"
+        required: true
+        content:
+          text/plain;charset=utf-8:
+            schema:
+              type: string
+              minLength: 1
+              example: "some message to convert"
+      responses:
+        '200':
+          description: "OK"
+          content:
+            text/plain;charset=utf-8:
+              schema:
+                type: string
+                example: "SOME MESSAGE TO CONVERT"
+        '400':
+          description: "Bad Request"
+  /downcase:
+    post:
+      summary: Make any string downcase
+      operationId: postToDowncase
+      requestBody:
+        description: "A message"
+        required: true
+        content:
+          text/plain;charset=utf-8:
+            schema:
+              type: string
+              minLength: 1
+              example: "some message to convert"
+      responses:
+        '200':
+          description: "OK"
+          content:
+            text/plain;charset=utf-8:
+              schema:
+                type: string
+                example: "SOME MESSAGE TO CONVERT"
+        '400':
+          description: "Bad Request"
+
+components:
+  schemas:
+    ActionRequest:
+      required:
+        - to
+      properties:
+        to:
+          description: The name of who requests the action
+          type: string
+          example: John
+          minLength: 1
+          maxLength: 60
+        from:
+          type: string
+          default: 'World'
+          example: World
+          minLength: 1
+          maxLength: 60
+    ActionResponse:
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          example: An action response message

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>info.couto.demo</groupId>
+    <artifactId>apifirst-microservice</artifactId>
+    <version>dev</version>
+    <relativePath>../</relativePath>
+  </parent>
+  <name>client</name>
+  <artifactId>apifirst-microservice-client</artifactId>
+  <version>${microservice.version}</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <!--    Internal-->
+    <dependency>
+      <groupId>info.couto.demo</groupId>
+      <artifactId>apifirst-microservice-api</artifactId>
+    </dependency>
+    <!-- dev -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.pivotal.spring.cloud</groupId>
+      <artifactId>spring-cloud-services-starter-circuit-breaker</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <!--    Runtime-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-cloudfoundry-discovery</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!--    Internal Testing-->
+    <dependency>
+      <groupId>info.couto.demo</groupId>
+      <artifactId>apifirst-microservice-server</artifactId>
+      <type>jar</type>
+      <classifier>noboot</classifier>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

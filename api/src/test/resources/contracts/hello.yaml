@@ -1,0 +1,63 @@
+---
+description: |-
+  Given
+    bla
+  When
+    bla
+  Then
+    bla
+request:
+  url: /hello
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: Gabriel
+
+response:
+  status: 200
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    message: Hello Gabriel, I'm World
+
+---
+request:
+  url: /hello
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: John
+    from: Doe
+
+response:
+  status: 200
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    message: Hello John, I'm Doe
+
+---
+request:
+  url: /hello
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: ""
+
+response:
+  status: 400
+
+---
+request:
+  url: /hello
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: "a0123456789012345678901234567890123456789012345678901234567890123456789"
+
+response:
+  status: 400

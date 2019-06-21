@@ -1,0 +1,56 @@
+---
+request:
+  url: /bye
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: Gabriel
+
+response:
+  status: 200
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    message: Bye Gabriel, I'm World
+
+---
+request:
+  url: /bye
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: John
+    from: Doe
+
+response:
+  status: 200
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    message: Bye John, I'm Doe
+
+---
+request:
+  url: /bye
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to:
+
+response:
+  status: 400
+
+---
+request:
+  url: /bye
+  method: POST
+  headers:
+    Content-Type: application/json;charset=utf-8
+  body:
+    to: "a0123456789012345678901234567890123456789012345678901234567890123456789"
+
+response:
+  status: 400

@@ -1,0 +1,24 @@
+---
+request:
+  url: /uppercase
+  method: POST
+  headers:
+    Content-Type: text/plain;charset=utf-8
+  body: "some message to convert"
+
+response:
+  status: 200
+  headers:
+    Content-Type: text/plain;charset=utf-8
+  body: "SOME MESSAGE TO CONVERT"
+
+---
+request:
+  url: /uppercase
+  method: POST
+  headers:
+    Content-Type: text/plain;charset=utf-8
+  body: ""
+
+response:
+  status: 400

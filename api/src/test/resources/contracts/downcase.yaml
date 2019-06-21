@@ -1,0 +1,24 @@
+---
+request:
+  url: /downcase
+  method: POST
+  headers:
+    Content-Type: text/plain;charset=utf-8
+  body: "SOME MESSAGE TO CONVERT"
+
+response:
+  status: 200
+  headers:
+    Content-Type: text/plain;charset=utf-8
+  body: "some message to convert"
+
+---
+request:
+  url: /downcase
+  method: POST
+  headers:
+    Content-Type: text/plain;charset=utf-8
+  body: ""
+
+response:
+  status: 400
