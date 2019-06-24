@@ -16,3 +16,11 @@
  - Free yourself from models boilerplate
  - Free yourself from client boilerplate
  - Use stubs to test your application against this microservice without lifting it
+ 
+## Libs that made this possible
+ - **OpenAPI-generator** : generates your api from apenapi spec
+ - **Spring Cloud Contract Verifier** : quick api testing and mocking
+ - **OpenFeign** : Declarative API clients
+ - **Hystrix** : Circuit-breaker pattern on the easy
+ - **Spring** : for having easy integrations for everything above
+ 
