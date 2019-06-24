@@ -9,7 +9,8 @@
 4. **Watch** your application fail compilation due to unattended api
 5. **Implement** the code on your controller @ server/src/main/java/
 6. **Watch** your tests pass
-7. **Enjoy** some coffee
+7. **Play** with your api @ localhost:8080/swagger-ui.html
+8. **Enjoy** some coffee
 
 ## Pros
  - Free yourself from updating swagger docs on the controller
