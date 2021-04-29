@@ -20,7 +20,7 @@
     <java.version>1.8</java.version>
     <swagger.version>2.0.12</swagger.version>
     <swagger-ui.version>3.22.2</swagger-ui.version>
-    <openapi-generator.version>4.0.0</openapi-generator.version>
+    <openapi-generator.version>5.1.0</openapi-generator.version>
     <swagger-annotations.version>1.5.22</swagger-annotations.version>
     <!--    <guava.version>27.1-jre</guava.version>-->
     <spring-cloud-contract.version>2.1.1.RELEASE</spring-cloud-contract.version>
